@@ -1,8 +1,11 @@
 import { Module } from '@nestjs/common';
-import { MoviesService } from './movies.service';
 import { MoviesResolver } from './movies.resolver';
+import { MovieSchema } from './movie.schema';
+import { MongooseModule } from '@nestjs/mongoose';
+import { MoviesService } from './movies.service';
 
 @Module({
-  providers: [MoviesService, MoviesResolver]
+ imports: [MongooseModule.forFeature([{ name: 'Movie', schema: MovieSchema }])],
+providers: [MoviesResolver, MoviesService],
 })
 export class MoviesModule {}
