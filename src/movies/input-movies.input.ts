@@ -1,7 +1,7 @@
 import { InputType, Field } from '@nestjs/graphql';
 
 @InputType()
-export class ItemInput {
+export class MovieInput {
   @Field()
   readonly title: string;
   @Field()
