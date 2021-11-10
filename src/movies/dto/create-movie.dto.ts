@@ -1,4 +1,4 @@
-import { ObjectType, Field, ID } from '@nestjs/graphql';
+import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
 
 @ObjectType()
 export class MovieType {
@@ -8,6 +8,6 @@ export class MovieType {
   readonly title: string;
   @Field()
   readonly director: string;
-  @Field()
-  readonly releaseDate: Date;
+  @Field(() => Int)
+  readonly year: number;
 }

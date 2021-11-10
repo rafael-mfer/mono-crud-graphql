@@ -1,4 +1,4 @@
-import { InputType, Field } from '@nestjs/graphql';
+import { InputType, Field, Int } from '@nestjs/graphql';
 
 @InputType()
 export class MovieInput {
@@ -6,6 +6,6 @@ export class MovieInput {
   readonly title: string;
   @Field()
   readonly director: string;
-  @Field()
-  readonly realeaseDate: Date;
+  @Field(() => Int)
+  readonly year: number;
 }
