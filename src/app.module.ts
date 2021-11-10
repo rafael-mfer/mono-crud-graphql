@@ -7,11 +7,12 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-  GraphQLModule.forRoot({
-    autoSchemaFile: 'schema.gql',
-  }),
-  MoviesModule,
-  MongooseModule.forRoot('mongodb://localhost/nestgraphql')],
+    GraphQLModule.forRoot({
+      autoSchemaFile: 'schema.gql',
+    }),
+    MoviesModule,
+    MongooseModule.forRoot(process.env.MONGODB_URL),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
