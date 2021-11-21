@@ -4,7 +4,7 @@ import { MovieType } from './dto/create-movie.dto';
 import { MovieInput } from './input-movies.input';
 import { Movie } from './movie.model';
 
-@Resolver((of) => MovieType)
+@Resolver(() => MovieType)
 export class MoviesResolver {
   constructor(private readonly moviesService: MoviesService) {}
 
