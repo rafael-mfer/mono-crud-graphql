@@ -11,7 +11,7 @@ type MovieType {
 
 type Query {
   movies: [MovieType!]!
-  movie(id: String!): [MovieType!]!
+  movie(id: String!): MovieType!
 }
 
 type Mutation {

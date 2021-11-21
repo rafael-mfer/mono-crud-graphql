@@ -15,3 +15,9 @@ export const MovieSchema = new mongoose.Schema({
     },
   },
 });
+
+export interface Movie {
+  title: string;
+  director: string;
+  year: number;
+}

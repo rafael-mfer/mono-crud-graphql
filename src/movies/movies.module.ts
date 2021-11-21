@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MoviesResolver } from './movies.resolver';
-import { MovieSchema } from './movie.schema';
+import { MovieSchema } from './movie.model';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MoviesService } from './movies.service';
 

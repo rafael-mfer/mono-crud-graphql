@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { MovieType } from './dto/create-movie.dto';
-import { Movie } from './interfaces/movie.interface';
+import { Movie } from './movie.model';
 import { MovieInput } from './input-movies.input';
 
 @Injectable()
@@ -19,7 +19,7 @@ export class MoviesService {
   }
 
   async findOne(id: string): Promise<MovieType> {
-    return await this.movieModel.findOne({ _id: id });
+    return await this.movieModel.findById(id).exec();
   }
 
   async delete(id: string): Promise<MovieType> {
